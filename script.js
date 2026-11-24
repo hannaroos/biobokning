@@ -55,3 +55,19 @@ for (let i = 1; i <= 6; i++) {
     option.textContent = i;
     ticketSelect.append(option);
 }
+
+//skapa checkbox för snacks
+const snackSelect = document.querySelector("#snacks");
+// const chosenSnacks = snacks.filter((s) => values.includes(s.id));
+
+snacks.forEach((snack) => {
+    const checkbox = document.createElement("input");
+    const label = document.createElement("label");
+    checkbox.type = "checkbox";
+    checkbox.name = "snack"; //name identifierar vilken typ av formulärfält det är, att alla checkboxar har samma name gör att de 
+    //grupperas som samma typ av formulärfält.
+    checkbox.value = snack.id;
+    label.textContent = `${snack.name} (${snack.price}) kr`; 
+    label.prepend(checkbox); //lägger till något i början av elementet. 
+    snackSelect.append(label);    
+});
