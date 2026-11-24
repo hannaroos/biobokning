@@ -15,3 +15,19 @@ const snacks = [
   { id: "godis", name: "Godis", price: 40 },
   { id: "nachos", name: "Nachos", price: 55 }
 ];
+
+//Fylla dropdown från arrayen movies ovan
+const movieSelect = document.querySelector("#movie");
+const placeholder = document.createElement("option");
+placeholder.value = "";
+placeholder.textContent = "Välj film";
+movieSelect.append(placeholder);
+
+
+
+movies.forEach((movie) => {
+    const option = document.createElement("option");
+    option.value = movie.id;
+    option.textContent = movie.title;
+    movieSelect.append(option);
+});
